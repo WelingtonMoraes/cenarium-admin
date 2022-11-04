@@ -18,7 +18,7 @@ try {
     print_r($response);
     echo '</pre>';
 
-    if ($response['accessToken']) {
+    if (!empty($response['accessToken'])) {
         session_start();
 
         $_SESSION['userId'] = $response['id'];
@@ -27,9 +27,10 @@ try {
 
         header("Location: ../dashboard/");
     } else {
-        header("Location: index.php");
+        header("Location: ./");
     }
 } catch (\RuntimeException $ex) {
     // catch errors
+    header("Location: ./");
     die(sprintf('Http error %s with code %d', $ex->getMessage(), $ex->getCode()));
 }

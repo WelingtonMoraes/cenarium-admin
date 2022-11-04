@@ -1,6 +1,6 @@
 <?php
 
-if (empty($_SESSION['accessToken'])) {
+if (!empty($_SESSION['accessToken'])) {
     echo '<pre>';
     echo 'Esta logado';
     echo '</pre>';
@@ -9,7 +9,6 @@ if (empty($_SESSION['accessToken'])) {
     echo 'Não esta logado';
     echo '</pre>';
 }
-
 
 ?>
 
