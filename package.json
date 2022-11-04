@@ -39,6 +39,8 @@
         "jquery.easing": "^1.4.1"
     },
     "devDependencies": {
+        "@types/gulp-autoprefixer": "0.0.33",
+        "@types/gulp-clean-css": "^4.3.0",
         "browser-sync": "2.26.14",
         "del": "6.0.0",
         "gulp": "4.0.2",
