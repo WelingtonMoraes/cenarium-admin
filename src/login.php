@@ -1,13 +1,8 @@
 <?php
+session_start();
 
 if (!empty($_SESSION['accessToken'])) {
-    echo '<pre>';
-    echo 'Esta logado';
-    echo '</pre>';
-} else {
-    echo '<pre>';
-    echo 'Não esta logado';
-    echo '</pre>';
+    header("Location: dashboard.php");
 }
 
 ?>
@@ -25,11 +20,11 @@ if (!empty($_SESSION['accessToken'])) {
     <title>Capiware - Login</title>
 
     <!-- Custom fonts for this template-->
-    <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
 
     <!-- Custom styles for this template-->
-    <link href="../../css/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet" />
 </head>
 
 <body class="bg-gradient-primary">
@@ -47,7 +42,7 @@ if (!empty($_SESSION['accessToken'])) {
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Capiware</h1>
                                     </div>
-                                    <form class="user" method="post" action="/src/login/loginController.php">
+                                    <form class="user" method="post" action="loginController.php">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user" name="email" placeholder="Enter Email Address..." />
                                         </div>
@@ -79,14 +74,14 @@ if (!empty($_SESSION['accessToken'])) {
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="../../js/sb-admin-2.min.js"></script>
+    <script src="../js/sb-admin-2.min.js"></script>
 </body>
 
 </html>

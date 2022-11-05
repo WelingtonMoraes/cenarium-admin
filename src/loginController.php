@@ -1,6 +1,6 @@
 <?php
-include('../consfig.php');
-include('../classCurl.php');
+include('consfig.php');
+include('classCurl.php');
 
 $url = $urlApi . "login";
 
@@ -25,12 +25,11 @@ try {
         $_SESSION['userName'] = $response['name'];
         $_SESSION['accessToken'] = $response['accessToken'];
 
-        header("Location: ../dashboard/");
+        header("Location: dashboard.php");
     } else {
-        header("Location: ./");
+        header("Location: index.php");
     }
 } catch (\RuntimeException $ex) {
     // catch errors
-    header("Location: ./");
-    die(sprintf('Http error %s with code %d', $ex->getMessage(), $ex->getCode()));
+    header("Location: index.php");
 }
