@@ -5,10 +5,6 @@ if (empty($_SESSION['accessToken'])) {
     header("Location: index.php");
 }
 
-echo '<pre>';
-print_r($_SESSION);
-echo '</pre>';
-
 ?>
 
 <!DOCTYPE html>
@@ -32,3 +28,15 @@ echo '</pre>';
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <?php include('navBar.php'); ?>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">

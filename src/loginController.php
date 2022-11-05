@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('consfig.php');
 include('classCurl.php');
 
@@ -19,13 +20,12 @@ try {
     echo '</pre>';
 
     if (!empty($response['accessToken'])) {
-        session_start();
 
         $_SESSION['userId'] = $response['id'];
         $_SESSION['userName'] = $response['name'];
         $_SESSION['accessToken'] = $response['accessToken'];
 
-        header("Location: dashboard.php");
+        //header("Location: dashboard.php");
     } else {
         header("Location: index.php");
     }

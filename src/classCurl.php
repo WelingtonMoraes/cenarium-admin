@@ -32,7 +32,8 @@ class CurlPost
             "Content-Type: application/json",
             "X-Content-Type-Options:nosniff",
             "Accept:application/json",
-            "Cache-Control:no-cache"
+            "Cache-Control:no-cache",
+            "Authorization: Bearer " . (empty($_SESSION['accessToken']) ? '' : $_SESSION['accessToken'])
         );
 
         \curl_setopt($ch, \CURLOPT_HTTPHEADER, $headers);
