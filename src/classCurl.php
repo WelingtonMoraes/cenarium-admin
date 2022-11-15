@@ -1,5 +1,4 @@
 <?php
-
 class CurlPost
 {
     private $url;
@@ -38,11 +37,16 @@ class CurlPost
 
         \curl_setopt($ch, \CURLOPT_HTTPHEADER, $headers);
         \curl_setopt($ch, \CURLOPT_RETURNTRANSFER, true);
+        \curl_setopt($ch, \CURLOPT_SAFE_UPLOAD, true);
         \curl_setopt($ch, \CURLOPT_POSTFIELDS, json_encode($post));
 
         $response = \curl_exec($ch);
         $error    = \curl_error($ch);
         $errno    = \curl_errno($ch);
+
+        echo '<pre>';
+        print_r($post);
+        echo '</pre>';
 
         if (\is_resource($ch)) {
             \curl_close($ch);

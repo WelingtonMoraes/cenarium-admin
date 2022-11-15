@@ -1,34 +1,52 @@
 <?php
-
+session_start();
 include('consfig.php');
 include('classCurl.php');
 
-$url = $urlApi . "register";
-
-$Object = new CurlPost($url);
-
-foreach ($_FILES as $key => $file) {
-    if (!isset($file) || !isset($file['name'])) continue;
-    $uploadfile = $uploaddir . basename($file['name']);
-
-    if (move_uploaded_file($file['tmp_name'], $uploadfile)) {
-        echo "$key file > $uploadfile .\n";
-    } else {
-        echo " Error $key  file.\n";
-    }
+if (empty($_POST['name']) || empty($_POST['description']) || empty($_FILES)) {
+    header("Location: timeCadastro.php?status=0");
 }
 
 try {
-    // execute the request
-    $response = $Object([
-        'name' => $_POST['name'],
-        'email' => $_POST['email'],
+
+    $url = $urlApi . "team";
+    $data = [
+        "Nome"  => $_POST['name'],
+        "Descricao" => $_POST['description'],
+        "Imagem" => new \CurlFile($_FILES['image']['tmp_name'], $_FILES['image']['type'], $_FILES['image']['name'])
+    ];
+
+    $curl = curl_init();
+
+    curl_setopt_array($curl, [
+        CURLOPT_URL => $url,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_POSTFIELDS => $data,
+        CURLOPT_HTTPHEADER => [
+            "Accept: */*",
+            "Authorization: Bearer " .  $_SESSION['accessToken'],
+            "content-type: multipart/form-data"
+        ],
     ]);
 
-    $response = json_decode($response, true);
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
 
-    header("Location: userCadastro.php");
-} catch (\RuntimeException $ex) {
-    // catch errors
-    header("Location: index.php");
+    curl_close($curl);
+
+    if ($err) {
+        echo "cURL Error #:" . $err;
+        header("Location: timeCadastro.php?status=0");
+    } else {
+        echo $response;
+        header("Location: timeCadastro.php?status=1");
+    }
+} catch (Exception $e) {
+    echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+    header("Location: timeCadastro.php?status=2");
 }

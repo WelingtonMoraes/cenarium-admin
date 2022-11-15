@@ -5,6 +5,21 @@ if (empty($_SESSION['accessToken'])) {
     header("Location: index.php");
 }
 
+if (!empty($_GET['status'])) {
+
+    if ($_GET['status'] = 1) {
+        echo '<div class="alert alert-success" role="alert">
+            Tarefa realizada com sucesso
+        </div>';
+        echo '<script>console.log(new closeAlert());</script>';
+    } else {
+        echo '<div class="alert alert-danger" role="alert">
+        Ops ! algo deu errado
+      </div>';
+        echo '<script>closeAlert();</script>';
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +41,38 @@ if (empty($_SESSION['accessToken'])) {
 
     <!-- Custom styles for this template-->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+
+    <style>
+        .form-upload {
+            background: #333;
+            display: block;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            width: 350px;
+        }
+
+        .botao-selecionar {
+            background-color: #dc9713;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 31px;
+        }
+
+        .input-personalizado {
+            cursor: pointer;
+        }
+
+        .imagem {
+            width: 100%;
+            max-width: 430px;
+            margin-top: 20px;
+        }
+
+        .input-file {
+            display: none;
+        }
+    </style>
 
 </head>
 

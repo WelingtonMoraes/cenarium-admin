@@ -25,7 +25,7 @@ try {
         $_SESSION['userName'] = $response['name'];
         $_SESSION['accessToken'] = $response['accessToken'];
 
-        header("Location: dashboard.php");
+        //header("Location: dashboard.php");
     } else {
         header("Location: index.php");
     }
