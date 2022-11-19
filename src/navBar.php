@@ -36,7 +36,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Cadastrar Itens:</h6>
                 <a class="collapse-item" href="userCadastro.php">Usuário</a>
-                <a class="collapse-item" href="fazemosCadastro.php">O que fazemos</a>
+                <a class="collapse-item" href="oqueFazemosCadastro.php">O que fazemos</a>
                 <a class="collapse-item" href="especialidadesCadastro.php">Especialidades</a>
                 <a class="collapse-item" href="timeCadastro.php">Time</a>
             </div>
@@ -46,16 +46,16 @@
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Alterar</span>
+            <i class="fa fa-list" aria-hidden="true"></i>
+            <span>Listagem</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Alterar Itens:</h6>
-                <a class="collapse-item" href="#">Usuário</a>
-                <a class="collapse-item" href="#">O que fazemos</a>
+                <h6 class="collapse-header">Listar Itens:</h6>
+                <a class="collapse-item" href="userListagem.php">Usuário</a>
+                <a class="collapse-item" href="oqueFazemosListagem.php">O que fazemos</a>
                 <a class="collapse-item" href="#">Especialidades</a>
-                <a class="collapse-item" href="#">Time</a>
+                <a class="collapse-item" href="timeListagem.php">Time</a>
             </div>
         </div>
     </li>

@@ -15,17 +15,13 @@ try {
 
     $response = json_decode($response, true);
 
-    echo '<pre>';
-    print_r($response);
-    echo '</pre>';
-
     if (!empty($response['accessToken'])) {
 
         $_SESSION['userId'] = $response['id'];
         $_SESSION['userName'] = $response['name'];
         $_SESSION['accessToken'] = $response['accessToken'];
 
-        //header("Location: dashboard.php");
+        header("Location: dashboard.php");
     } else {
         header("Location: index.php");
     }

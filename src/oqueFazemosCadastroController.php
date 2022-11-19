@@ -3,17 +3,18 @@ session_start();
 include('consfig.php');
 include('classCurl.php');
 
-if (empty($_POST['name']) || empty($_POST['email'])) {
-    header("Location: userCadastro.php?status=0");
+if (empty($_POST['name']) || empty($_POST['description']) || empty($_FILES)) {
+    header("Location: oqueFazemosCadastro.php?status=0");
 }
 
-print_r($_POST);
-
 try {
-    $url = $urlApi . "register";
+
+    $url = $urlApi . "what-we-do";
     $data = [
-        "name"  => $_POST['name'],
-        "email" => $_POST['email'],
+        "Nome"  => $_POST['name'],
+        "Descricao" => $_POST['description'],
+        "PaginaInicial" => 'false',
+        "Imagem" => new \CurlFile($_FILES['image']['tmp_name'], $_FILES['image']['type'], $_FILES['image']['name'])
     ];
 
     $curl = curl_init();
@@ -41,12 +42,12 @@ try {
 
     if ($err) {
         echo "cURL Error #:" . $err;
-        //header("Location: userCadastro.php?status=0");
+        header("Location: oqueFazemosCadastro.php?status=0");
     } else {
         echo $response;
-        //header("Location: userCadastro.php?status=1");
+        header("Location: oqueFazemosCadastro.php?status=1");
     }
 } catch (Exception $e) {
     echo 'Exceção capturada: ',  $e->getMessage(), "\n";
-    //header("Location: userCadastro.php?status=2");
+    header("Location: oqueFazemosCadastro.php?status=2");
 }

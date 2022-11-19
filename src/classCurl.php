@@ -59,3 +59,63 @@ class CurlPost
         return $response;
     }
 }
+
+function getRequest($url)
+{
+    $curl = curl_init();
+
+    curl_setopt_array($curl, [
+        CURLOPT_URL => $url,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "GET",
+        CURLOPT_POSTFIELDS => "",
+        CURLOPT_HTTPHEADER => [
+            "Accept: */*",
+            "content-type: multipart/form-data",
+            "Authorization: Bearer " . (empty($_SESSION['accessToken']) ? '' : $_SESSION['accessToken'])
+        ],
+    ]);
+
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
+
+    curl_close($curl);
+
+    $array = json_decode($response);
+
+    return $array;
+}
+
+function deleteRequest($url)
+{
+    $curl = curl_init();
+
+    curl_setopt_array($curl, [
+        CURLOPT_URL => $url,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "DELETE",
+        CURLOPT_POSTFIELDS => "",
+        CURLOPT_HTTPHEADER => [
+            "Accept: */*",
+            "content-type: multipart/form-data",
+            "Authorization: Bearer " . (empty($_SESSION['accessToken']) ? '' : $_SESSION['accessToken'])
+        ],
+    ]);
+
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
+
+    curl_close($curl);
+
+    $array = json_decode($response);
+
+    return $array;
+}
