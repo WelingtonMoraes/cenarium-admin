@@ -54,7 +54,7 @@
                 <h6 class="collapse-header">Listar Itens:</h6>
                 <a class="collapse-item" href="userListagem.php">Usuário</a>
                 <a class="collapse-item" href="oqueFazemosListagem.php">O que fazemos</a>
-                <a class="collapse-item" href="#">Especialidades</a>
+                <a class="collapse-item" href="especialidadesListagemo.php">Especialidades</a>
                 <a class="collapse-item" href="timeListagem.php">Time</a>
             </div>
         </div>

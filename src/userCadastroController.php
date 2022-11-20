@@ -41,12 +41,12 @@ try {
 
     if ($err) {
         echo "cURL Error #:" . $err;
-        //header("Location: userCadastro.php?status=0");
+        header("Location: userCadastro.php?status=0");
     } else {
         echo $response;
-        //header("Location: userCadastro.php?status=1");
+        header("Location: userCadastro.php?status=1");
     }
 } catch (Exception $e) {
     echo 'Exceção capturada: ',  $e->getMessage(), "\n";
-    //header("Location: userCadastro.php?status=2");
+    header("Location: userCadastro.php?status=2");
 }
