@@ -35,7 +35,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Cadastrar Itens:</h6>
-                <a class="collapse-item" href="userCadastro.php">Usuário</a>
+                <!-- <a class="collapse-item" href="userCadastro.php">Usuário</a> -->
                 <a class="collapse-item" href="oqueFazemosCadastro.php">O que fazemos</a>
                 <a class="collapse-item" href="especialidadesCadastro.php">Especialidades</a>
                 <a class="collapse-item" href="timeCadastro.php">Time</a>
@@ -52,9 +52,9 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Listar Itens:</h6>
-                <a class="collapse-item" href="userListagem.php">Usuário</a>
+                <!-- <a class="collapse-item" href="userListagem.php">Usuário</a> -->
                 <a class="collapse-item" href="oqueFazemosListagem.php">O que fazemos</a>
-                <a class="collapse-item" href="especialidadesListagemo.php">Especialidades</a>
+                <a class="collapse-item" href="especialidadesListagem.php">Especialidades</a>
                 <a class="collapse-item" href="timeListagem.php">Time</a>
             </div>
         </div>

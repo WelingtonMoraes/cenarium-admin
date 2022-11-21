@@ -1,4 +1,4 @@
 <?php
 
-$urlApi = 'http://localhost:5005/';
-$useSSL = false;
+$urlApi = 'https://backend.cenariumbrasil.com.br/';
+$useSSL = TRUE;

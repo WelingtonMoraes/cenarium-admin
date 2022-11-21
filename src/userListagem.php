@@ -7,11 +7,6 @@ $url = $urlApi . "users";
 
 $arrayTeam = getRequest($url);
 
-echo '<pre>';
-print_r($arrayTeam);
-echo '</pre>';
-
-
 ?>
 
 <?php include('header.php'); ?>
@@ -31,11 +26,11 @@ echo '</pre>';
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Time</h1>
-                <p class="mb-4">Para cadastrar <a href="timeCadastro.php">mais funcionário</a>.</p>
+                <!-- <h1 class="h3 mb-2 text-gray-800">Time</h1>
+                <p class="mb-4">Para cadastrar <a href="timeCadastro.php">mais funcionário</a>.</p> -->
 
                 <!-- DataTales Example -->
-                <div class="card shadow mb-4">
+                <!-- <div class="card shadow mb-4">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">Lista do seu time</h6>
                     </div>
@@ -59,29 +54,36 @@ echo '</pre>';
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <?php foreach ($arrayTeam as $key => $value) : ?>
+                                    <?php //foreach ($arrayTeam as $key => $value) : 
+                                    ?>
                                         <tr>
                                             <td>
-                                                <img class="formatImage" src="<?= $value->image ?>" alt="<?= $value->description ?>">
+                                                <img class="formatImage" src="<? //= $value->image 
+                                                                                ?>" alt="<? //= $value->description 
+                                                                                            ?>">
                                             </td>
-                                            <td><?= $value->name ?></td>
-                                            <td><?= $value->email ?></td>
+                                            <td><? //= //$value->name 
+                                                ?></td>
+                                            <td><? //= //$value->email 
+                                                ?></td>
                                             <td><a href="#">
                                                     <i class="fa fa-wrench" aria-hidden="true"></i>
                                                 </a>
                                             </td>
                                             <td>
-                                                <a href="<?= 'timeDelete.php?id=' . $value->id ?>">
+                                                <a href="<? //= 'timeDelete.php?id=' . $value->id 
+                                                            ?>">
                                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                                 </a>
                                             </td>
                                         </tr>
-                                    <?php endforeach; ?>
+                                    <?php //endforeach; 
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
             <!-- /.container-fluid -->

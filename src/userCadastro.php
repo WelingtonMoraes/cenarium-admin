@@ -14,13 +14,11 @@
         <div class="row">
 
             <!-- Area Chart -->
-            <div class="col-xl-12 col-lg-7">
+            <!-- <div class="col-xl-12 col-lg-7">
                 <div class="card shadow mb-4">
-                    <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 class="m-0 font-weight-bold text-primary">Cadastrar Usuário</h6>
                     </div>
-                    <!-- Card Body -->
                     <div class="card-body">
                         <form class="user row" method="post" action="userCadastroController.php">
                             <div class="form-group col-xl-6">
@@ -37,7 +35,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
         </div>
 
